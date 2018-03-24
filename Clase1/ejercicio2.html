@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+<meta charset="UTF-8">
+
+<body>
+    <form action="miPhp.php" method="GET">
+        <!--Se pone el metodo por el cual se agrega la info -->
+        <h1>Login</h1>
+        <!--el for anida al id-->
+        <table>
+            <tr>
+                <td>
+                    <label>Nombre:&nbsp</label>
+                </td>
+                <td>
+                    <input type="text" id="usuario" nombre="nombre" size="50" maxlength="80">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Apellido:</label>
+                </td>
+                <td>
+                    <input type="password" id="pass" name="apellido" size="50" maxlength="80">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" onclick="saludar()" value="Concatenar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script type="text/javascript">
+function $(id){
+    return document.getElementById(id).value;
+}
+
+    function saludar() {
+        // var nombre = document.getElementById("usuario").value;
+        // var apellido = document.getElementById("pass").value;
+        var usuario = $("usuario");
+        var pass = $("pass");
+
+        if(usuario == "" || pass == "")
+            alert("campo vacio");
+        else
+            alert(usuario + " " + pass);
+
+    }
+</script>
+
+</html>
