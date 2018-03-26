@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<HTML>
+<meta charset="UTF-8">
+
+<HEAD>
+    <title>Practica 1</title>
+</HEAD>
+
+<body>
+    <label>
+        <h1>Practica HTML + Javascript</h1>
+    </label>
+    <form>
+        <label for="planet">
+            <h4>Nombre del planeta </h4>
+        </label>
+        <input type="text" id="planet" name="planet" onkeypress="descriptPLanet()">
+        <input type="button" value="Procesar" onclick="descriptPLanet()">
+    </form>
+    <label>
+        <p id="m" name="pPlanet" hidden=true>El mercurio es un elemento químico con el símbolo Hg y número atómico 80. En la literatura antigua era designado
+            comúnmente como plata líquida y también como azogue o hidrargiro.1​ Elemento de aspecto plateado, metal pesado
+            perteneciente al bloque D de la tabla periódica, el mercurio es el único elemento metálico que es líquido en
+            condiciones estándar de laboratorio; el único otro elemento que es líquido bajo estas condiciones es el bromo
+            (un no metal), aunque otros metales como el cesio, el galio, y el rubidio se funden a temperaturas ligeramente
+            superiores.
+        </p>
+        <p id="mar" name="pPlanet" hidden=true>Marte es el cuarto planeta en orden de distancia al Sol y el segundo más pequeño del sistema solar, después de Mercurio.
+            Recibió su nombre en homenaje al dios de la guerra de la mitología romana (Ares en la mitología griega), y es
+            también conocido como "el planeta rojo"2​ 3​ debido a la apariencia rojiza4​ que le confiere el óxido de hierro
+            predominante en su superficie. Marte es el planeta interior más alejado del Sol.
+        </p>
+        <p id="ven" name="pPlanet" hidden=true>Venus es el segundo planeta del sistema solar en orden de distancia desde el Sol, el sexto en cuanto a tamaño, ordenados
+            de mayor a menor. Al igual que Mercurio, carece de satélites naturales. Recibe su nombre en honor a Venus, la
+            diosa romana del amor (gr. Afrodita). Se trata de un planeta de tipo rocoso y terrestre, llamado con frecuencia
+            el planeta hermano de la Tierra, ya que ambos son similares en cuanto a tamaño, masa y composición, aunque totalmente
+            diferentes en cuestiones térmicas y atmosféricas (temperatura media de 463,85 ºC).
+        </p>
+    </label>
+    <script type="text/javascript">
+        const CANTIDAD_PLANETAS = 3;
+
+        function returnPlanetDescription(idP) {
+            for (var i = 0; i < document.getElementsByName("pPlanet").length; i++)
+                document.getElementsByName("pPlanet")[i].hidden = true; 
+
+            if (idP != "null")
+                document.getElementById(idP).hidden = false;
+
+        }
+
+        function descriptPLanet() {
+            var inputPlanet = $("planet");
+            switch ((inputPlanet).toLowerCase()) {
+                case "mercurio":
+                    returnPlanetDescription("m");
+                    break;
+                case "marte":
+                    returnPlanetDescription("mar")
+                    break;
+                case "venus":
+                    returnPlanetDescription("ven")
+                    break;
+                default:
+                    returnPlanetDescription("null")
+                    break;
+
+
+
+            }
+            console.log("Funca bien");
+
+        }
+
+        function $(id) {
+            return document.getElementById(id).value;
+        }
+
+        function prueba() {
+            console.log(document.getElementsByName("pPlanet"));
+        }
+    </script>
+</body>
+
+</HTML>

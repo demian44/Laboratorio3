@@ -36,9 +36,9 @@
     </form>
 </body>
 <script type="text/javascript">
-function $(id){
-    return document.getElementById(id).value;
-}
+    function $(id) {
+        return document.getElementById(id).value;
+    }
 
     function saludar() {
         // var nombre = document.getElementById("usuario").value;
@@ -46,7 +46,7 @@ function $(id){
         var usuario = $("usuario");
         var pass = $("pass");
 
-        if(usuario == "" || pass == "")
+        if (usuario == "" || pass == "")
             alert("campo vacio");
         else
             alert(usuario + " " + pass);

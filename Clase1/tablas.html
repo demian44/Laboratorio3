@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas</title>
+</head>
+
+<body>
+    <label>
+        <h1>Tablas:</h1>
+    </label>
+    <form>
+        <table>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Orden
+                </th>
+                <th>
+                    Tamaño
+                </th>
+            </tr>
+            <tr>
+                <td>Tierra</td>
+                <td>3er</td>
+                <td>12.756 km</td>
+            </tr>
+            <tr>
+                <td>Marte </td>
+                <td>4to</td>
+                <td>6.794 km</td>
+            </tr>
+        </table>
+    </form><br>
+    <form>
+            <table id="tablas">
+        </form>
+</body>
+<script type="text/javascript">
+    function tabla(){
+        var tabla = document.getElementById("tabla");
+        var cuerpoTabla = document.createElement("tbody");
+        
+        for(var i=0;i<3; i++){
+            var hilera = document.createElement("tr");
+        }
+    }
+</script>
+
+</html>
