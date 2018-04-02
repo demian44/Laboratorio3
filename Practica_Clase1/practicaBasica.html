@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Practica 1</title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<label>
+		<h1>Ejercicio en casa Clase1</h1>
+	</label>
+	<br>
+
+	<label fork="nombre">Nombre :
+		<input type="text" size="30" maxlength="32" name="datosPrincipales" id="nombre" value="demian">
+	</label>
+	<br>
+
+	<label fork="apellido">Aopellido:
+		<input type="text" name="datosPrincipales" id="apellido" size="30" maxlength="32" value="boullon">
+	</label>
+	<br>
+
+	<label fork="edad">Edad :
+		<input type="text" name="datosPrincipales" id="edad" size="30" maxlength="32" value="29">
+	</label>
+	<br>
+
+	<br>
+	<form>
+		<label>
+			<h3>
+				<input type="radio" value="mujer" id="genero" name="genero" checked="true">Mujer
+				<br>
+				<input type="radio" value="mi cuerpo es mie" id="genero" name="genero">Mi cuerpe es mie
+				<br>
+				<input type="radio" value="hombre" id="genero" name="genero">Hombre
+				<br>
+			</h3>
+		</label>
+		<input type="reset" value="Limpiar">
+		<input type="button" onclick="takeData()" value="Ver Datos">
+	</form>
+</body>
+<script type="text/javascript" charset="utf-8" async defer>
+	function saludar() {
+		console.log("hola");
+	}
+
+	function takeData() {
+		var datos = document.getElementsByName("datosPrincipales");
+		var array = [];
+		// for (var i = 0; i < datos.length; i++) {
+		// 	array.push(datos[i].value);
+		// }
+		array["nombre"] = datos[0].value;
+		array["apellido"] = datos[1].value;
+		array["edad"] = datos[2].value;
+		console.log(array);
+		var datosRadio = document.getElementsByName("genero");
+		for (var i = 0; i < datosRadio.length; i++)
+			if (datosRadio[i].checked)
+				console.log(datosRadio[i].value);
+	}
+</script>
+
+</html>
