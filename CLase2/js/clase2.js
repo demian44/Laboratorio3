@@ -9,6 +9,10 @@ function saludar() {
     alert("hola mundo desde el js");
 }
 
+function saludar(){
+    window.alert("wea");
+}
+
 
 function sumar(params) {
     document.getElementById("resultado").value = sumarNumeros();
