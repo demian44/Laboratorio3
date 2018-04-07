@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Calculadora</title>
+    <script src="./js/clase2.js"></script>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <fieldset>
+        <legend><h2>Sumar numeros</h2></legend>
+            
+        <section>
+            <article>
+                <input type="number" name="number" id="numero1" value="4"> +
+                <input type="number" name="number" id="numero2" value="5">
+                <input type="button" value="Sumar" onclick="sumar()">
+                <input type="button" value="Sumar y Guardar" onclick="sumarGuardar()">
+                <br>
+                <br> Resultado:
+                <input type="text" name="result" id="resultado" disabled="disabled">
+            </article>
+            <footer>
+                <h2>Historial de resultados</h2>
+                <table>
+                    <thead>
+                        <th> Numero 1 </th>
+                        <th> Numero 2 </th>
+                        <th> Numero 3 </th>
+                    </thead>
+                    <tbody id="body">
+                    </tbody>
+                    <p id="tabla">
+                </table>
+            </footer>
+        </section>
+    </fieldset>
+</body>
+
+</html>

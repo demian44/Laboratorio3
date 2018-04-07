@@ -1,0 +1,12 @@
+
+HTML5:
+
+    Existen tags.
+    - "<header>" va dentro del Body, es la cabecera de la página. 
+    - <nav> es el menu. 
+    - <section> muchas secciones en cada pagina.
+    - <arcticle>
+    - <aside> menu lateral.
+    - <foder> pie de pagina. 
+
+
