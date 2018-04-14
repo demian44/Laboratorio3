@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="main"> <!--Los divs ocupan todo el ancho de la pantalla-->
+        <input type="text" name="pepe" id=""><br>
+        <textarea name="cajaTexto" id="" cols="30" rows="10"></textarea>
+    </div>
+</body>
+</html>
+<style>
+#main{
+    /*Fixed define la posición en la pantalla y no relativamente a otros componentes*/
+    /*Absolut debe definirse dentro de un relative, si n toma al body como relativo y termina funcionando como Fixed
+    */
+     width: 500px; /*solo se lo puede dar a los contenedores*/
+     margin:  auto; /*Margen con respecto a lo de afuera*/
+     padding:  10px; /*Margen con respecto a lo de afuera*/
+
+     padding: auto; /*Margen con respecto a lo de adentro*/
+     background-color:aqua; /**/
+    box-sizing:border-box;
+}
+.simple{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+
+}
+
+</style>

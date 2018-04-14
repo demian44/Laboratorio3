@@ -1,0 +1,17 @@
+c:\users\administrador\documents\visual studio 2010\Projects\2015\Entidades\bin\Debug\Entidades.dll
+c:\users\administrador\documents\visual studio 2010\Projects\2015\Entidades\bin\Debug\Entidades.pdb
+c:\users\administrador\documents\visual studio 2010\Projects\2015\Entidades\obj\Debug\Entidades.dll
+c:\users\administrador\documents\visual studio 2010\Projects\2015\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_1\Entidades\bin\Debug\Entidades.dll
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_1\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_1\Entidades\obj\Debug\Entidades.dll
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_1\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_11\Entidades\bin\Debug\Entidades.dll
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_11\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_11\Entidades\obj\Debug\Entidades.dll
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase03_11\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase04_1\Entidades\bin\Debug\Entidades.dll
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase04_1\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase04_1\Entidades\obj\Debug\Entidades.dll
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase04_1\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\Visual Studio 2010\Projects\2015.LABIII.Clase04_1\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache

@@ -1,0 +1,13 @@
+#main > nav
+
+va a aplicar todo el estilo a los nav que esten dentro del id main
+ej:
+
+<div id="main">
+     <nav>si<nav>
+
+</div>
+<div id="coso">
+     <nav> no aplica.</na>
+</div>
+position y float son la clave para acomodar cosas en pantalla
