@@ -1,0 +1,2 @@
+Necesita node.js
+Se tiene que hacer click derecho en la carpeta Git Bash here y ejecutar node index.js

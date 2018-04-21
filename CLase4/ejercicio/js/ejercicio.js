@@ -76,7 +76,7 @@ function ingreso() {
     var nombre = document.getElementById("nombre").value;
     var pass = document.getElementById("pass").value;
 
-    if(nombre.leght >3 && pass.length>3){
+    if(nombre.length > 3 && pass.length  > 3){
         ajax("POST", "http://localhost:3000/loginUsuario", "usr=" + nombre + "&pass=" + pass, true);
     }
     else{
