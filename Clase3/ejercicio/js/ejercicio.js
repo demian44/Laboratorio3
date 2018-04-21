@@ -25,7 +25,7 @@ function ingreso() {
     else {
         document.getElementById("nombre").className = "error";
     }
-    if (document.getElementById("pass").value == "123") {
+    if (document.getElementById("pass").value == "123"&& document.getElementById("pass").value == "123") {
         alert("Entramo'");
     }
     else {

@@ -5,7 +5,7 @@ img{
 
 }
 
-.section_ {
+section {
     width: 300px;
     height: 500px;
     /*margin-right: 850px;*/
@@ -39,7 +39,7 @@ div{
     border: 2px solid grey;
 }
 input[type=text]{
-     width: 100%;
+    width: 100%;
      padding: 2% 4%;
      margin: 8px 0;
      box-sizing: border-box;
@@ -51,18 +51,11 @@ input[type=text]:focus {
 border: 3px solid #555;
 }
 
-
-.error{
-border: 1px solid rgb(240, 0, 0);
-background-color: rgb(255, 235, 235);
-}
-
-.good{
-    border: 1px solid rgb(0, 240, 60);
-    background-color: rgb(236, 255, 235);
-    }
-    
-
+/* <!-- 11
+input[type=text] {
+border: 2px solid red;
+border-radius: 4px;
+}*/
 *{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+      
+        var httpReq = new XMLHttpRequest();
+        var callBack = function () {
+            //Hay 5 comunicaciones del ReadyState  pero el cereo nunca se muestra.
+            console.log("Llego info del servidor - ReadyState: " + httpReq.readyState);
+            if (httpReq.readyState == 4) {
+                //Acá tenemos la respuesta del servidor.
+                //Sabemos que hay una respuesta, pero no sabemos si es buena o mala.
+                //500 error en el servidor.
+                if (httpReq.status == 200) {
+                    //Solo hay status en el readyState 4
+                    console.log(
+                        httpReq.responseText
+                    );
+                }
+                else {
+                    alert("ocurrió un error en el servidor.");
+                }
+                console.log("")
+            }
+
+        }
+
+
+        function IngresarDatos(){            
+            ajax("POST","http://localhost:3000/loginUsuario","usr=usuario&pass=1234",true);
+        }
+        // function IngresarDatos(){            
+        //     ajax("GET","http://localhost:3000/loginUsuario","usr=usuario&pass=1234",true);
+        // }
+        
+        function ajax(metodo, url, parametros, tipo) {
+            if(metodo === "GET"){
+                httpReq.onreadystatechange = callBack;
+                httpReq.open(metodo, url +"?"+ parametros, tipo);
+                httpReq.send();
+            }
+            else{
+                httpReq.onreadystatechange = callBack;
+                httpReq.open(metodo, url, tipo);
+                httpReq.setRequestHeader("content-Type","application/x-www-form-urlencoded");
+                httpReq.send(parametros);
+            }
+        }
+
+        IngresarDatos();    
+
+        //Si editamos algo en el index.js del servidor debemos hacer ctrl+c luego (flecha arriba) luego enter
+
+    //     //Ajax se empezó a usar en el  2005, nos permite  hacer llamadas acincronas y recargar fragmentos de páginas
+    //     // Se basa en un objeto que esta disponible que se llama xmlrequest que nos permite generar un objeto que nos deja
+    //     //hacer peticiones get y post
+    // var CallBack = function  hacerAlgo(valor1, valor2){ // No necesariamente se tiene que llamar CAllBAck
+    //     console.log(valor1 + valor2);
+
+    // }
+
+    // function sumar(sum1, sum2, llamada){
+    //     llamada(num1,num2); // Recibe una funcion por parametro
+    // }
+
+    // sumar(1,2,CallBack)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

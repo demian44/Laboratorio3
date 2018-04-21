@@ -68,3 +68,12 @@ background-color: rgb(255, 235, 235);
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+.spin{
+    position: absolute;
+    margin-left: 30%;
+    top: 10%;
+    width: 30%;
+    
+}
+
