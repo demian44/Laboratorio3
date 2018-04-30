@@ -1,0 +1,89 @@
+img{
+    width: 70%;
+    position: relative;
+    MARGIN: 0 0 10px 30px;
+
+}
+
+.section_ {
+    width: 22%;
+    height: 500px;
+    /*margin-right: 850px;*/
+    border: 3px solid grey;
+    /* float: right;  */
+   
+    padding: 25px; /*Espacio entre el relleno y el marco*/
+     /* display: flex;  */
+}
+input[type=button], input[type=submit], input[type=reset] {
+background-color: rgb(76, 119, 175);
+/********* border: none; */
+color: white;
+/* padding: 16px 32px; */
+height: 12%;
+font-size: 80%;
+text-decoration: none;
+/*margin: 4px 2px;9*/
+cursor: pointer;
+width: 100%;
+/* position: relative; */
+margin-top:15%;
+}
+div{
+    margin: 0 0 0% 0%;
+    width: 98%;
+    height: 5500px;
+    margin-left: 1%;
+    overflow: auto;
+    padding:20px;
+    flex :1;    
+     border: 2px solid grey; 
+}
+input[type=text]{
+     width: 100%;
+     padding: 2% 4%;
+     /******* margin: 8px 0; */
+     box-sizing: border-box;
+     /* background-color: rgb(154, 241, 230); */
+     font-size: 90%;
+     height: 9%;
+}
+input[type=password]{
+    width: 100%;
+    padding: 2% 4%;
+    margin: 8px 0;
+    box-sizing: border-box;
+    /* background-color: rgb(154, 241, 230); */
+    font-size: 90%;
+    height: 9%;
+}
+input[type=text]:focus {
+border: 3px solid #555;
+}
+
+
+.error{
+border: 1px solid rgb(240, 0, 0);
+background-color: rgb(255, 235, 235);
+}
+
+.good{
+    border: 1px solid rgb(0, 240, 60);
+    background-color: rgb(236, 255, 235);
+    }
+    
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+.spin{
+    /* position: absolute; */
+    margin-left: 30%;
+    top: 10%;
+    width: 30%;
+    
+}
+

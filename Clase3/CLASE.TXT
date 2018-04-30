@@ -13,5 +13,6 @@ ej:
 position y float son la clave para acomodar cosas en pantalla
 
 
-Hacer un menu lateral para la derecha para loguear con foto redondeada dos imput type con estilos boton de loggin 
+Hacer un menu lateral para la derecha para loguear con foto redondeada dos imput type con estilos boton 
+de loggin 
 si al loguear se hace mal, tiene que cambiar el estilo y mostrar la letra roja. 

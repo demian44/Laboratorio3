@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestor Usuarios</title>
+    <script src="./controlador.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./estilos.css"> 
+</head>
+
+<body>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="Nombre">Nombre </label>
+                    </td>
+                    <td>
+                        <input type="text" name="NuevaPersona" id="Nombre" value="Mamerto">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Apellido">Apellido</label>
+                    </td>
+                    <td>
+                        <input type="text" name="NuevaPersona" id="Apellido" value="Mamerto">
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Fecha">Fecha </label>
+                    </td>
+                    <td>
+                        <input type="date" name="NuevaPersona" id="Fecha" value="Mamerto">
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Nombre">Telefono</label>
+                    </td>
+                    <td>
+                        <input type="text" name="NuevaPersona" id="Telefono" value="Mamerto">
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <br>
+                            
+                        </td>
+                        <td>
+                            <input type="button" id="Cargar" value="Agregar" onclick="agregarPersona()">
+                            <br>
+                        </td>
+                    </tr>
+            </tbody>
+       </table>   
+    </div>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha</th>
+                <th>Telefono</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody id="tablaResultados">
+        </tbody>
+    </table>
+</body>
+
+</html>
