@@ -36,7 +36,7 @@ function requestService(metodo, url, parametros, tipo) {
     else if (metodo === "POST") {
         httpReq.open(metodo, url, true)
         httpReq.body = parametros;
-        httpReq.setRequestHeader("content-Type", "application/x-www-form-urlencoded");
+        httpReq.setRequestHeader("content-Type", "application/json");
         httpReq.send(parametros);
     }
 }
@@ -60,7 +60,7 @@ function pedirPersonasGet() {
 ////// General Lista /////////////////////////
 function cargarLista() {
     var personas = JSON.parse(localStorage.getItem("personas"));    //parseo json a personas;
-    var count = Object.keys(personas).length;
+    // var count = Object.keys(personas).length;
     var body = "";
     var i = 0;
     personas.forEach(persona => {
@@ -84,7 +84,7 @@ function borrarPersona(index, event) {
     event.preventDefault();
     var personas = JSON.parse(localStorage.getItem("personas"));
     personas.splice(index, 1);
-    localStorage.setItem("personas", JSON.stringify(personas));
+    localStorage.setItem("datosLogin", JSON.stringify(personas));
     cargarLista();
 }
 
