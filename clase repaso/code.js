@@ -22,16 +22,26 @@ var manuelo = function () {//Se pasa por parametro a httpReq.
         //Acá tenemos la respuesta del servidor.
         //Sabemos que hay una respuesta, pero no sabemos si es buena o mala.
         //500 error en el servidor.
-        console.log("codigo: "+httpReq.status);
+        console.log("codigo: " + httpReq.status);
         if (httpReq.status == 200) {
             //Solo hay status en el readyState 4
             console.log(httpReq.responseText);
             var respuesta = JSON.parse(httpReq.responseText);
             if (respuesta.autenticado == "si") {
-                localStorage.setItem("datosLogin",JSON.stringify(datosLogin));
+                localStorage.setItem("datosLogin", JSON.stringify(datosLogin));
                 document.getElementById("email").className = "good";
                 document.getElementById("pass").className = "good";
-                location.href ="file:///D:/Laboratorio3/clase%20repaso/index.html";
+                var URLactual = window.location;
+                var res = URLactual.toString().split("/");
+                URLactual = "";
+                for (var i = 0; i < res.length - 1; i++) {
+                    URLactual += res[i];
+                    if (i < res.length - 2)
+                        URLactual += "/";
+                }
+                URLactual += "/index.html";
+                window.location = URLactual;
+
             }
             else {
                 document.getElementById("pass").className = "error";
@@ -67,8 +77,8 @@ function validar(e) {
     if (tecla == 13)
         ingreso();
 
-    console.log(document.all);
-    console.log(e);
+    // console.log(document.all);
+    // console.log(e);
 }
 
 
@@ -92,6 +102,10 @@ function ingreso() {
         document.getElementById("email").className = "error";
     }
 }
+
+function hacerPost(){
+    ajax("POST","http://localhost:1337/postearNuevaEntrada",true);
+}
 // function IngresarDatos(){            
 //     ajax("POST","http://localhost:3000/loginUsuario","usr=usuario&pass=1234",true);
 // }
@@ -111,4 +125,11 @@ function ajax(metodo, url, parametros, tipo) {
         httpReq.setRequestHeader("content-Type", "application/json");
         httpReq.send(parametros);
     }
+}
+
+function MandarPost(metodo, url, parametros, tipo) {
+    httpReq.onreadystatechange = manuelo;
+    httpReq.open(metodo, url, tipo);
+    httpReq.setRequestHeader("content-Type", "application/json");
+    httpReq.send(parametros);
 }

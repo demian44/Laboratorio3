@@ -16,11 +16,10 @@
         <label>
             <h1>Posteos</h1>
         </label>
-        <div class="popAp" style="padding:1% 0 0 0">
-            <input type="text" name="post" id="title" class="inputPost">
-            <input type="text" name="post" id="title" class="inputPost">
-            <input type="text" name="post" id="" class="inputPost">
-            <textarea rows="3" name="post" id="postText" class="inputPost"></textarea>
+        <div class="popAp" style="padding:2% 0 0 0">
+            <input type="text" name="post" maxlength="40" id="title" class="inputPost" autofocus="autofocus" placeholder="Post Titulo">
+            <input type="text" name="post" maxlength="40" id="title" class="inputPost" placeholder="Post Header">
+            <textarea rows="5" name="post" maxlength="500" id="postText" class="inputPost input_Pot" placeholder="Post Text" style="font-type: Arial;"></textarea>
         </div>
     </div>
 </body>
@@ -40,6 +39,19 @@
         font-size: 90%;
         height: 59%;
         resize:none;
+        font-size:15px;
+         
+    }
+
+    .input_Pot{
+        padding: 2% 3% 3% 3%; 
+    }
+
+    textarea{
+        font-size:15px;
+        font-size: 145px;
+        text-justify: distribute;
+        padding: 2% 3% 3% 3%;
     }
 </style>
 
