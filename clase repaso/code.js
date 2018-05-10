@@ -12,21 +12,22 @@ function cambiarNombre() {
     // }
 
 }
+var post;
 var pass;
 var datosLogin;
 var httpReq = new XMLHttpRequest();
-var manuelo = function () {//Se pasa por parametro a httpReq.
+var callBack = function () {//Se pasa por parametro a httpReq.
     //Hay 5 comunicaciones del ReadyState  pero el cereo nunca se muestra.
     console.log("Llego info del servidor - ReadyState: " + httpReq.readyState);
     if (httpReq.readyState == 4) {
-        //Acá tenemos la respuesta del servidor.
-        //Sabemos que hay una respuesta, pero no sabemos si es buena o mala.
+        document.getElementById("spin").hidden = true;
         //500 error en el servidor.
-        console.log("codigo: " + httpReq.status);
+        console.log("status: " + httpReq.status);
         if (httpReq.status == 200) {
+
             //Solo hay status en el readyState 4
-            console.log(httpReq.responseText);
             var respuesta = JSON.parse(httpReq.responseText);
+            console.log(respuesta);
             if (respuesta.autenticado == "si") {
                 localStorage.setItem("datosLogin", JSON.stringify(datosLogin));
                 document.getElementById("email").className = "good";
@@ -43,15 +44,25 @@ var manuelo = function () {//Se pasa por parametro a httpReq.
                 window.location = URLactual;
 
             }
-            else {
-                document.getElementById("pass").className = "error";
-                document.getElementById("email").className = "error";
+            else if (!!respuesta.date) {
+                window.location = "./posted.html";
+                post = JSON.parse(post);
+                post.date = respuesta.date;
+                post = JSON.stringify(post);
+                localStorage.setItem("post", post);
+                post = JSON.parse(post);
+
             }
-            document.getElementById("spin").hidden = true;
+            else {
+                document.getElementById("pass").className = "inputPassword error";
+                document.getElementById("email").className = "inputLogin error";
+                alert("Usuario o password incorrecto!");
+            }
         }
-        else {
+        else if (httpReq.status == 500)
             alert("ocurrió un error en el servidor.");
-        }
+        else
+            alert("Error: "+httpReq.status);
 
     }
 
@@ -62,28 +73,10 @@ var manuelo = function () {//Se pasa por parametro a httpReq.
 
 }
 function resetCss(id) {
-    document.getElementById(id).className = "input[type=text]";
-    document.getElementById(id).className = "input[type=text]";
+    var classInput = document.getElementById(id).className;
+    classInput = classInput.toString().split(" ");
+    document.getElementById(id).className = classInput[0];
 }
-
-
-function validar(e) {
-    if (document.all)
-        tecla = e.keyCode;
-    else
-        tecla = e.which;
-
-    //tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla == 13)
-        ingreso();
-
-    // console.log(document.all);
-    // console.log(e);
-}
-
-
-
-
 
 function ingreso() {
 
@@ -92,19 +85,42 @@ function ingreso() {
 
     datosLogin = { email: mail, password: pass }
 
-    var objectJson = JSON.stringify(datosLogin);
-
-    if (mail.length > 3 && pass.length > 3) {
-        ajax("POST", "http://localhost:1337/login", objectJson, true);
+    var objectJson = JSON.stringify(datosLogin); //Parsear objeto a json para enviar la soliciud
+    var exito = true;
+    if (mail.length < 4) {
+        exito = false;
+        document.getElementById("email").className = "inputLogin error";
     }
-    else {
-        document.getElementById("pass").className = "error";
-        document.getElementById("email").className = "error";
+    if (pass.length < 4) {
+        exito = false;
+        document.getElementById("pass").className = "inputPassword error";
+    }
+    if (exito) {
+        ajax("POST", "http://localhost:1337/login", objectJson, true);
     }
 }
 
-function hacerPost(){
-    ajax("POST","http://localhost:1337/postearNuevaEntrada",true);
+function initPost() {
+    document.getElementById("post").hidden = "";
+    document.getElementById("btnGenerarPost").hidden = "hidden";
+    document.getElementById("btnEnviarPost").hidden = "";
+}
+
+function enviarPost() {
+    document.getElementById("post").hidden = "hidden";
+    document.getElementById("btnGenerarPost").hidden = "";
+    document.getElementById("btnEnviarPost").hidden = "hidden";
+    hacerPost();
+}
+
+function hacerPost() {
+    post = JSON.stringify({
+        title: document.getElementById("title").value,
+        header: document.getElementById("header").value,
+        text: document.getElementById("text").value
+    });
+    console.log(post);
+    ajax("POST", "http://localhost:1337/postearNuevaEntrada", post, true);
 }
 // function IngresarDatos(){            
 //     ajax("POST","http://localhost:3000/loginUsuario","usr=usuario&pass=1234",true);
@@ -115,12 +131,12 @@ function hacerPost(){
 
 function ajax(metodo, url, parametros, tipo) {
     if (metodo === "GET") {
-        httpReq.onreadystatechange = manuelo;
+        httpReq.onreadystatechange = callBack;
         httpReq.open(metodo, url + "?" + parametros, tipo);
         httpReq.send();
     }
     else {
-        httpReq.onreadystatechange = manuelo;
+        httpReq.onreadystatechange = callBack;
         httpReq.open(metodo, url, tipo);
         httpReq.setRequestHeader("content-Type", "application/json");
         httpReq.send(parametros);
@@ -128,7 +144,7 @@ function ajax(metodo, url, parametros, tipo) {
 }
 
 function MandarPost(metodo, url, parametros, tipo) {
-    httpReq.onreadystatechange = manuelo;
+    httpReq.onreadystatechange = callBack;
     httpReq.open(metodo, url, tipo);
     httpReq.setRequestHeader("content-Type", "application/json");
     httpReq.send(parametros);

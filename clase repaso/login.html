@@ -18,12 +18,14 @@
             <br>
             <br>
             <br>
-            <input type="text" name="datos" id="email" onclick="resetCss('email')" onkeypress="validar(event)">
+            <input type="text" name="datos" id="email" value="demian44@pepe"
+                         class="inputLogin" placeholder="Email" onclick="resetCss('email')"><br>
+                         
+            <input type="password" name="datos" value="1234" id="pass" class="inputPassword" 
+                        placeholder="Password" onclick="resetCss('pass')"><br>
+
             <br>
-            <input type="password" name="datos" id="pass" onclick="resetCss('pass')" onkeypress="validar(event)">
-            <br>
-            <br>
-            <input type="button" value="ingresar" onclick="ingreso()">
+            <input type="button" value="ingresar" class="inputButtonLogin" onclick="ingreso()">
         </section>
     </div>
 </body>

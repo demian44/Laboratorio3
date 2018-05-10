@@ -39,6 +39,45 @@ app.post("/nuevaPersona",function(req,res){
     
 });
 
+app.post("/editarPersona",function(req,res){
+    setTimeout(function(){
+        console.log("Llego al servidor "+JSON.stringify(req.body));
+        console.log((req.body.nombre!= undefined &&req.body.nombre!= "") );
+       
+        if((req.body.nombre!= undefined&&req.body.nombre!= "") &&(req.body.apellido!= undefined&&req.body.nombre!= "") &&  (req.body.telefono!= undefined&&req.body.telefono!= "") && (req.body.fecha!= undefined&&req.body.fecha!= "")){
+            
+                console.log("Sale del servidor "+"{'respuesta': 'editado'}");
+                personas.push(req.body);
+
+                res.send({'respuesta': 'editado'});    
+            
+            return;
+        }
+        console.log("Sale del servidor "+"{'respuesta': 'error'}")
+        res.send({'respuesta': 'error'});
+    },2000);
+    
+});
+app.post("/agregarPersona",function(req,res){
+    setTimeout(function(){
+        console.log("Llego al servidor "+JSON.stringify(req.body));
+        console.log((req.body.nombre!= undefined &&req.body.nombre!= "") );
+       
+        if((req.body.nombre!= undefined&&req.body.nombre!= "") &&(req.body.apellido!= undefined&&req.body.nombre!= "") &&  (req.body.telefono!= undefined&&req.body.telefono!= "") && (req.body.fecha!= undefined&&req.body.fecha!= "")){
+            
+                console.log("Sale del servidor "+"{'respuesta': 'agregado'}");
+                personas.push(req.body);
+
+                res.send({'respuesta': 'agregado'});    
+            
+            return;
+        }
+        console.log("Sale del servidor "+"{'respuesta': 'error'}")
+        res.send({'respuesta': 'error'});
+    },2000);
+    
+});
+
 
 
 app.listen(3000,function(){
