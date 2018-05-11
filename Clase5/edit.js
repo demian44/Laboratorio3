@@ -3,15 +3,18 @@ var persona;
 var mensaje;
 var cargaExistosa;
 function cargarPersona() {
-    persona = JSON.parse(localStorage.getItem("usuarioEditado")); // Traigo la persona a editar de local Storage
-
-    var fecha = persona.fecha.split("/");        ///
-    fecha = fecha[0] + "-" + fecha[1] + "-" + fecha[2]; /// Cambio "/" por "-"
-
-    document.getElementById("nombre").value = persona.nombre;
-    document.getElementById("apellido").value = persona.apellido;
-    document.getElementById("fecha").value = fecha;
-    document.getElementById("telefono").value = persona.telefono;
+    var isEdit =  localStorage.getItem("isEdit");
+    if(JSON.parse(isEdit)){
+        persona = JSON.parse(localStorage.getItem("usuarioEditado")); // Traigo la persona a editar de local Storage
+    
+        var fecha = persona.fecha.split("/");        ///
+        fecha = fecha[0] + "-" + fecha[1] + "-" + fecha[2]; /// Cambio "/" por "-"
+    
+        document.getElementById("nombre").value = persona.nombre;
+        document.getElementById("apellido").value = persona.apellido;
+        document.getElementById("fecha").value = fecha;
+        document.getElementById("telefono").value = persona.telefono;
+    }
 }
 
 console.log(persona);

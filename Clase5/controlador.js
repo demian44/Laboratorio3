@@ -21,6 +21,7 @@ function agregarPersona() {
         //personas = personas.concat([persona]);
         personas = [persona].concat(personas);
         localStorage.setItem("personas", JSON.stringify(personas));
+        
         cargarLista();
 
         requestService("POST", "http://localhost:3000/nuevaPersona", "nombre=" + persona.nombre +
@@ -70,12 +71,14 @@ function editarPersona(index) {
     var persona = personas[index];
     persona.index = index; // Agrego el campo index para mantenerlo como referencia en la tabla. 
     localStorage.setItem("usuarioEditado",JSON.stringify(persona));
+    localStorage.setItem("isEdit", JSON.stringify(true));
     window.location = "./edit.html";
 }
 
-function agregarPersona() {
+function crearPersona() {
     event.preventDefault();
     var personas = JSON.parse(localStorage.getItem("personas"));
+    localStorage.setItem("isEdit", JSON.stringify(false));
     window.location = "./nuevo.html";
     // localStorage.setItem("datosLogin", JSON.stringify(personas));
     // cargarLista();
