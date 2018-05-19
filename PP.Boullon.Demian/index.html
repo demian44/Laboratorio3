@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./class/clases.css">
+</head>
+
+<body>
+    <div class="indexHeader" style="padding:0.5% 0 0.5% 2%">
+        NOTAS
+    </div>
+   
+    <table  id= "tabla" class="tabla">
+        <thead id="cabecera">
+            
+        </thead>
+        <tbody id="tablaResultados">
+        </tbody>
+        <div class="popAp" hidden="hidden" id="editWindow">
+            <input type="button" value="x" class="close" onclick="closeEdit()">
+            <input type="number" id="legajo" name="alumnoEditado" maxlength="40"  class="inputIndex" autofocus="autofocus" placeholder="Post Titulo">
+            <input type="text" id="nombre" name="alumnoEditado" maxlength="70"  class="inputIndex" placeholder="">
+            <input type="text" id="materia" name="alumnoEditado" maxlength="40"  class="inputIndex" placeholder="">
+            <input type="number" id="nota" name="alumnoEditado" maxlength="2"  class="inputIndex" autofocus="a" placeholder="Post Titulo">
+            <input type="button" value="Guardar" class="inputButtonGuardar" onclick="Guardar()">
+        </div>
+        <img src="./ounq1mw5kdxy.gif" hidden=true id="spinIndex" class="spinIndex">
+    </table>
+</body>
+
+</html>

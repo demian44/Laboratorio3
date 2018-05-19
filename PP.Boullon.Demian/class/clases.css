@@ -1,0 +1,275 @@
+img{
+    width: 70%;
+    position: relative;
+    MARGIN: 0 0 10px 30px;
+
+}
+
+.section_ {
+    width: 22%;
+    height: 500px;
+    /*margin-right: 850px;*/
+    border: 3px solid grey;
+    /* float: right;  */
+   
+    padding: 25px; /*Espacio entre el relleno y el marco*/
+     /* display: flex;  */
+}
+
+.section_2{
+    width: 95.5%;
+    height: 200px;
+    margin : 2% 0% 0 0%;
+    border: 3px solid grey;
+    /* float: right;  */
+   
+    padding: 25px; /*Espacio entre el relleno y el marco*/
+     /* display: flex;  */
+}
+.labelError{
+    font-size: 80%;
+    color: red;
+    height: 15px;
+    width: 50px; 
+    margin-left: 10%;
+}
+.inputButtonLogin {
+background-color: rgb(76, 175, 129);
+/********* border: none; */
+color: white;
+/* padding: 16px 32px; */
+height: 12%;
+border:0px;
+border-radius: 7px;
+font-size: 80%;
+text-decoration: none;
+/*margin: 4px 2px;9*/
+cursor: pointer;
+width: 60%;
+/* position: relative; */
+margin-top:10%;
+margin-left:18%;
+}
+.indexHeader {
+    position: relative;
+    z-index: 2;
+    font-size: 30px;
+    background-color: #5f5f5f;
+    color: #f1f1f1;
+    width: 98%;
+    height: 10%;
+    letter-spacing: 1px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: left;
+    padding-top: 0.5%;
+    padding-left: 2%;
+}
+
+.tabla {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+    margin:0 1% 0 1%;
+    margin: 1% 0.5% 0.5% 1.02%;
+    text-align: left;
+}
+.tabla td, .tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.close{
+    background-color: red;
+    color: white;
+    height: 20px;
+    width: 20px;
+    padding: 0%;
+    font-size: 90%;
+    margin-left: 95%;
+    border-radius: 5px;
+    border: 0;
+    
+}
+
+.inputButtonGuardar{
+    background-color: rgb(76, 175, 129);
+    /********* border: none; */
+    color: white;
+    /* padding: 16px 32px; */
+    height: 25%;
+    border:0px;
+    border-radius: 7px;
+    font-size: 80%;
+    text-decoration: none;
+    /*margin: 4px 2px;9*/
+    cursor: pointer;
+    width: 60%;
+    /* position: relative; */
+    margin-top:3%;
+    margin-left:40%;
+}
+.popAp {
+    position: absolute;
+    margin: 8% 0 0 25%; 
+    padding: 1% 2.5% 4% 2.5%;
+    height: 300px;
+    width: 400px;
+    background-color: rgb(197, 197, 197);
+}
+
+.tabla tr:nth-child(even){background-color: #f2f2f2;}
+
+.tabla tr:hover {background-color: #ddd;}
+
+.tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(57, 97, 228);
+    color: white;
+}
+
+.div{
+    margin: 0 0 0% 0%;
+    width: 95%;
+    height: 575px;
+    margin-left: 1%;
+    overflow: auto;
+    padding:20px;
+    flex :1;    
+     border: 2px solid grey; 
+}
+.inputLogin{
+     width: 100%;
+     padding: 2% 4%;
+     border-radius: 6px;
+     border: 1px solid black;
+     /******* margin: 8px 0; */
+     box-sizing: border-box;
+     /* background-color: rgb(154, 241, 230); */
+     font-size: 90%;
+     height: 9%;
+}
+
+.inputIndex{
+    width: 100%;
+    padding: 2% 4%;
+    margin: 2% 0 3% 0; 
+    
+    box-sizing: border-box;
+    /* background-color: rgb(154, 241, 230); */
+    font-size: 90%;
+    height: 12%;
+}
+
+.inputPassword{
+    width: 100%;
+    padding: 2% 4%;
+    border-radius: 6px;
+    border: 1px solid black;
+    margin: 8px 0;
+    box-sizing: border-box;
+    /* background-color: rgb(154, 241, 230); */
+    font-size: 90%;
+    height: 9%;
+}
+
+ .inputLogin:focus {
+border: 3px solid #555;
+} 
+
+
+.error{
+border: 1px solid rgb(240, 0, 0);
+background-color: rgb(255, 235, 235);
+}
+
+.good{
+    border: 1px solid rgb(0, 240, 60);
+    background-color: rgb(236, 255, 235);
+    }
+    
+
+/* *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+} */
+
+.spin{
+    position: absolute; 
+    margin-left: 30%;
+    top: 10%;
+    width: 30%;
+    
+}
+.spinIndex{
+    position: absolute; 
+    margin-left: 30%;
+    top: 10%;
+    width: 30%;
+}
+
+
+
+.labelPost {
+    color: #f1f1f1;
+    font-style:italic;
+    font-size: 30px;
+    margin: 0 0 0 0;
+}
+
+.buttonPost {
+    background-color: rgb(64, 194, 69);
+    position: relative;
+    border: none;
+    color: white;
+    height: 15%;
+    width: 14%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 0.5% 0% 0.5% 0%;
+    margin: 0.8% 0 0 0;
+}
+
+.buttonBack {
+    background-color: rgb(64, 194, 69);
+    position: relative;
+    border: none;
+    color: white;
+    height: 90%;
+    width: 14%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 0.5% 0% 0.5% 0%;
+    margin: 0.0% 0 0 51.5%;
+}
+
+.inputPost {
+    margin: 2% 5% 0 5%;
+    width: 90%;
+    font-size: 90%;
+    height: 59%;
+    resize: none;
+    font-size: 15px;
+
+}
+
+.input_Pot {
+    padding: 2% 3% 3% 3%;
+    font-size: 90%;
+    height: 59%;
+    resize: none;
+    font-size: 15px;
+}
+
+textarea {
+    font-size: 15px;
+    font-size: 145px;
+    text-justify: distribute;
+    padding: 2% 3% 3% 3%;
+}
