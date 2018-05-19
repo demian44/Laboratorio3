@@ -17,6 +17,60 @@ var post;
 var pass;
 var datosLogin;
 var httpReq = new XMLHttpRequest();
+var success = function (result) {
+    {
+        //Solo hay status en el readyState 4
+        if (result.type == "User") {
+            localStorage.setItem("datosLogin", JSON.stringify(datosLogin));
+            document.getElementById("email").className = "good";
+            document.getElementById("pass").className = "good";
+            var URLactual = window.location;
+            var res = URLactual.toString().split("/");
+            URLactual = "";
+            for (var i = 0; i < res.length - 1; i++) {
+                URLactual += res[i];
+                if (i < res.length - 2)
+                    URLactual += "/";
+            }
+            URLactual += "/index.html";
+            window.location = URLactual;
+            localStorage.setItem("infoUser", JSON.stringify({ "type": "User", "email": mail }));
+
+        }
+        else if (result.type == "Admin") {
+            localStorage.setItem("datosLogin", JSON.stringify(datosLogin));
+            document.getElementById("email").className = "good";
+            document.getElementById("pass").className = "good";
+            localStorage.setItem("infoUser", JSON.stringify({ "type": "Admin", "email": mail }));
+            var URLactual = window.location;
+            var res = URLactual.toString().split("/");
+            URLactual = "";
+            for (var i = 0; i < res.length - 1; i++) {
+                URLactual += res[i];
+                if (i < res.length - 2)
+                    URLactual += "/";
+            }
+            URLactual += "/index.html";
+            window.location = URLactual;
+        }
+        else if (!!result.date) {
+            window.location = "./posted.html";
+            post = JSON.parse(post);
+            post.date = respuesta.date;
+            post = JSON.stringify(post);
+            localStorage.setItem("post", post);
+            post = JSON.parse(post);
+
+        }
+        else {
+            document.getElementById("mensajeError").innerHTML = "Debe ingresar un email y password válidos!";
+            document.getElementById("pass").className = "inputPassword error";
+            document.getElementById("email").className = "inputLogin error";
+        }
+    }
+}
+
+
 var callBack = function () {//Se pasa por parametro a httpReq.
     //Hay 5 comunicaciones del ReadyState  pero el cereo nunca se muestra.
     console.log("Llego info del servidor - ReadyState: " + httpReq.readyState);
@@ -43,14 +97,14 @@ var callBack = function () {//Se pasa por parametro a httpReq.
                 }
                 URLactual += "/index.html";
                 window.location = URLactual;
-                localStorage.setItem("infoUser",JSON.stringify({"type":"User","email":mail}));
+                localStorage.setItem("infoUser", JSON.stringify({ "type": "User", "email": mail }));
 
             }
-            else if(respuesta.type == "Admin"){
+            else if (respuesta.type == "Admin") {
                 localStorage.setItem("datosLogin", JSON.stringify(datosLogin));
                 document.getElementById("email").className = "good";
                 document.getElementById("pass").className = "good";
-                localStorage.setItem("infoUser",JSON.stringify({"type":"Admin","email":mail}));
+                localStorage.setItem("infoUser", JSON.stringify({ "type": "Admin", "email": mail }));
                 var URLactual = window.location;
                 var res = URLactual.toString().split("/");
                 URLactual = "";
@@ -80,7 +134,7 @@ var callBack = function () {//Se pasa por parametro a httpReq.
         else if (httpReq.status == 500)
             alert("ocurrió un error en el servidor.");
         else
-            alert("Error: "+httpReq.status);
+            alert("Error: " + httpReq.status);
 
     }
 
@@ -90,6 +144,7 @@ var callBack = function () {//Se pasa por parametro a httpReq.
 
 
 }
+
 function resetCss(id) {
     var classInput = document.getElementById(id).className;
     classInput = classInput.toString().split(" ");
@@ -120,15 +175,23 @@ function ingreso() {
 }
 
 function ajax(metodo, url, parametros, tipo) {
-    if (metodo === "GET") {
-        httpReq.onreadystatechange = callBack;
-        httpReq.open(metodo, url + "?" + parametros, tipo);
-        httpReq.send();
-    }
-    else {
-        httpReq.onreadystatechange = callBack;
-        httpReq.open(metodo, url, tipo);
-        httpReq.setRequestHeader("content-Type", "application/json");
-        httpReq.send(parametros);
-    }
+
+    //  $.ajax(metodo,url,parametros,tipo);
+    $.ajax({
+        url: url,
+        data: parametros,
+        type: metodo,
+        success: success
+    });
+    // if (metodo === "GET") {
+    //     httpReq.onreadystatechange = callBack;
+    //     httpReq.open(metodo, url + "?" + parametros, tipo);
+    //     httpReq.send();
+    // }
+    // else {
+    //     httpReq.onreadystatechange = callBack;
+    //     httpReq.open(metodo, url, tipo);
+    //     httpReq.setRequestHeader("content-Type", "application/json");
+    //     httpReq.send(parametros);
+    // }
 }
