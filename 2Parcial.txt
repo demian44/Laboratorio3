@@ -1,0 +1,16 @@
+_   <div> toma por defecto las 12 columnas, a menos que se le seteen. 
+_   fieldsetrow, fieldsetcolumn
+
+
+col-sm (modificador por el tamaño de la pantalla........... small, permite setear para pantallas chicas_celular)
+
+col-md (modificador por el tamaño de la pantalla........... small, permite setear para monitores con baja resolución o tablets)
+
+col-lg (modificador por el tamaño de la pantalla........... small, permite setear para monitores)
+
+col-xl (modificador por el tamaño de la pantalla........... small, permite setear para monitores hd)
+
+
+popup es el modal en bootstrap
+
+
