@@ -39,7 +39,7 @@ var miReduce = function () {
 
     var coso = array.reduce(function (total, num) {
         return total += num.nota;
-    });
+    },0);
 
     console.log(coso);
 }
