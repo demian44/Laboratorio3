@@ -1,0 +1,31 @@
+.clase1{
+    margin: 2% 1% 5% 1%;
+    width: 92%;
+    border: 1px solid cornflowerblue;
+    padding: 2% 2% 2% 2%;
+}
+
+.clase2{
+    margin: 0% 0% 1% 0%;
+    font-family: arial;
+    width: 14%;
+}
+.boton{
+    /* margin: 0% 0% 1% 0%; */
+    font-family: arial;
+    width: 14%;
+    font-size: 15px;
+    background: whitesmoke;
+    background-color: rgb(80, 176, 255) ;
+    border: 0px;
+    padding:  0.5% 1%  0.5% 0;
+}
+
+.boton:hover{
+    background: rgb(61, 166, 252) ;
+}
+
+
+input{
+    width: 98%;
+}
