@@ -1,0 +1,74 @@
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+clases.ts(2,28): error TS2554: Expected 3 arguments, but got 2.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts ç
+clases.ts(5,1): error TS1003: Identifier expected.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+clases.ts(5,1): error TS1003: Identifier expected.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+clases.ts(5,1): error TS1003: Identifier expected.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+clases.ts(5,1): error TS1003: Identifier expected.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc *.ts
+error TS6053: File '*.ts' not found.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc js/*.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc --init
+message TS6071: Successfully created a tsconfig.json file.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc --init
+error TS5054: A 'tsconfig.json' file is already defined at: 'D:/Typescript/tsconfig.json'.
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ tsc js/*.ts
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ npm install @types/jquery
+npm WARN saveError ENOENT: no such file or directory, open 'D:\Typescript\package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open 'D:\Typescript\package.json'
+npm WARN Typescript No description
+npm WARN Typescript No repository field.
+npm WARN Typescript No README data
+npm WARN Typescript No license field.
+
++ @types/jquery@3.3.4
+added 1 package in 0.877s
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$ ^C
+
+alumno@LAB4PC11 MINGW64 /d/Typescript
+$
