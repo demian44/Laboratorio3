@@ -17,7 +17,7 @@ var datos = [
 		registered: '2014-11-16T07:01:50 +03:00',
 		latitude: -72.96186,
 		longitude: 24.667421,
-		tags: [ 'in', 'et', 'deserunt', 'aliqua', 'aute', 'cupidatat', 'id' ],
+		tags: ['in', 'et', 'deserunt', 'aliqua', 'aute', 'cupidatat', 'id'],
 		friends: [
 			{
 				id: 0,
@@ -53,7 +53,7 @@ var datos = [
 		registered: '2014-11-17T08:20:28 +03:00',
 		latitude: -15.861938,
 		longitude: -12.249321,
-		tags: [ 'nisi', 'enim', 'adipisicing', 'Lorem', 'aute', 'reprehenderit', 'do' ],
+		tags: ['nisi', 'enim', 'adipisicing', 'Lorem', 'aute', 'reprehenderit', 'do'],
 		friends: [
 			{
 				id: 0,
@@ -89,7 +89,7 @@ var datos = [
 		registered: '2014-09-21T07:23:03 +03:00',
 		latitude: -15.369449,
 		longitude: 13.062712,
-		tags: [ 'duis', 'voluptate', 'consequat', 'ipsum', 'incididunt', 'nulla', 'labore' ],
+		tags: ['duis', 'voluptate', 'consequat', 'ipsum', 'incididunt', 'nulla', 'labore'],
 		friends: [
 			{
 				id: 0,
@@ -125,7 +125,7 @@ var datos = [
 		registered: '2015-01-17T11:10:38 +03:00',
 		latitude: -35.381397,
 		longitude: 38.056816,
-		tags: [ 'amet', 'laboris', 'non', 'velit', 'et', 'consequat', 'occaecat' ],
+		tags: ['amet', 'laboris', 'non', 'velit', 'et', 'consequat', 'occaecat'],
 		friends: [
 			{
 				id: 0,
@@ -161,7 +161,7 @@ var datos = [
 		registered: '2015-05-27T06:31:14 +03:00',
 		latitude: -31.20834,
 		longitude: 142.477255,
-		tags: [ 'labore', 'eu', 'pariatur', 'in', 'pariatur', 'labore', 'velit' ],
+		tags: ['labore', 'eu', 'pariatur', 'in', 'pariatur', 'labore', 'velit'],
 		friends: [
 			{
 				id: 0,
@@ -197,7 +197,7 @@ var datos = [
 		registered: '2014-10-21T07:26:11 +03:00',
 		latitude: -86.68477,
 		longitude: -120.973698,
-		tags: [ 'cillum', 'et', 'eiusmod', 'id', 'ea', 'consectetur', 'in' ],
+		tags: ['cillum', 'et', 'eiusmod', 'id', 'ea', 'consectetur', 'in'],
 		friends: [
 			{
 				id: 0,
@@ -233,7 +233,7 @@ var datos = [
 		registered: '2014-05-24T09:29:20 +03:00',
 		latitude: -87.343023,
 		longitude: -38.266386,
-		tags: [ 'deserunt', 'ex', 'non', 'reprehenderit', 'aute', 'esse', 'excepteur' ],
+		tags: ['deserunt', 'ex', 'non', 'reprehenderit', 'aute', 'esse', 'excepteur'],
 		friends: [
 			{
 				id: 0,
@@ -269,7 +269,7 @@ var datos = [
 		registered: '2014-09-18T08:42:53 +03:00',
 		latitude: -1.366514,
 		longitude: 178.553309,
-		tags: [ 'Lorem', 'deserunt', 'adipisicing', 'consectetur', 'irure', 'velit', 'commodo' ],
+		tags: ['Lorem', 'deserunt', 'adipisicing', 'consectetur', 'irure', 'velit', 'commodo'],
 		friends: [
 			{
 				id: 0,
@@ -305,7 +305,7 @@ var datos = [
 		registered: '2015-08-23T07:25:49 +03:00',
 		latitude: -51.094362,
 		longitude: 24.242263,
-		tags: [ 'duis', 'consequat', 'pariatur', 'est', 'irure', 'cillum', 'velit' ],
+		tags: ['duis', 'consequat', 'pariatur', 'est', 'irure', 'cillum', 'velit'],
 		friends: [
 			{
 				id: 0,
@@ -341,7 +341,7 @@ var datos = [
 		registered: '2014-04-20T02:08:33 +03:00',
 		latitude: 14.055285,
 		longitude: 85.361755,
-		tags: [ 'ut', 'dolore', 'tempor', 'reprehenderit', 'ea', 'officia', 'nostrud' ],
+		tags: ['ut', 'dolore', 'tempor', 'reprehenderit', 'ea', 'officia', 'nostrud'],
 		friends: [
 			{
 				id: 0,
@@ -377,7 +377,7 @@ var datos = [
 		registered: '2016-02-04T12:23:22 +03:00',
 		latitude: 9.018979,
 		longitude: 169.046525,
-		tags: [ 'incididunt', 'anim', 'nulla', 'laboris', 'ex', 'Lorem', 'do' ],
+		tags: ['incididunt', 'anim', 'nulla', 'laboris', 'ex', 'Lorem', 'do'],
 		friends: [
 			{
 				id: 0,
@@ -413,7 +413,7 @@ var datos = [
 		registered: '2015-08-17T08:33:50 +03:00',
 		latitude: 49.76954,
 		longitude: -69.39834,
-		tags: [ 'sit', 'aliquip', 'pariatur', 'veniam', 'ad', 'ea', 'in' ],
+		tags: ['sit', 'aliquip', 'pariatur', 'veniam', 'ad', 'ea', 'in'],
 		friends: [
 			{
 				id: 0,
@@ -449,7 +449,7 @@ var datos = [
 		registered: '2015-03-18T02:05:52 +03:00',
 		latitude: 63.092326,
 		longitude: -155.866476,
-		tags: [ 'laborum', 'excepteur', 'ipsum', 'id', 'consectetur', 'deserunt', 'eu' ],
+		tags: ['laborum', 'excepteur', 'ipsum', 'id', 'consectetur', 'deserunt', 'eu'],
 		friends: [
 			{
 				id: 0,
@@ -485,7 +485,7 @@ var datos = [
 		registered: '2014-09-29T01:51:30 +03:00',
 		latitude: 87.191958,
 		longitude: 159.649126,
-		tags: [ 'esse', 'nisi', 'cupidatat', 'voluptate', 'fugiat', 'ipsum', 'qui' ],
+		tags: ['esse', 'nisi', 'cupidatat', 'voluptate', 'fugiat', 'ipsum', 'qui'],
 		friends: [
 			{
 				id: 0,
@@ -521,7 +521,7 @@ var datos = [
 		registered: '2014-07-29T03:25:36 +03:00',
 		latitude: 10.08376,
 		longitude: 171.92668,
-		tags: [ 'cillum', 'consectetur', 'minim', 'nostrud', 'aliquip', 'qui', 'eu' ],
+		tags: ['cillum', 'consectetur', 'minim', 'nostrud', 'aliquip', 'qui', 'eu'],
 		friends: [
 			{
 				id: 0,
@@ -557,7 +557,7 @@ var datos = [
 		registered: '2015-09-18T09:21:08 +03:00',
 		latitude: -47.460885,
 		longitude: -91.117874,
-		tags: [ 'irure', 'mollit', 'id', 'tempor', 'qui', 'quis', 'minim' ],
+		tags: ['irure', 'mollit', 'id', 'tempor', 'qui', 'quis', 'minim'],
 		friends: [
 			{
 				id: 0,
@@ -593,7 +593,7 @@ var datos = [
 		registered: '2015-05-15T08:25:20 +03:00',
 		latitude: 46.771386,
 		longitude: 146.697382,
-		tags: [ 'mollit', 'id', 'pariatur', 'velit', 'eu', 'consectetur', 'eu' ],
+		tags: ['mollit', 'id', 'pariatur', 'velit', 'eu', 'consectetur', 'eu'],
 		friends: [
 			{
 				id: 0,
@@ -629,7 +629,7 @@ var datos = [
 		registered: '2014-04-22T10:15:13 +03:00',
 		latitude: -18.606982,
 		longitude: 38.651257,
-		tags: [ 'sunt', 'sit', 'labore', 'nisi', 'incididunt', 'mollit', 'dolor' ],
+		tags: ['sunt', 'sit', 'labore', 'nisi', 'incididunt', 'mollit', 'dolor'],
 		friends: [
 			{
 				id: 0,
@@ -665,7 +665,7 @@ var datos = [
 		registered: '2014-12-15T01:04:24 +03:00',
 		latitude: -42.484399,
 		longitude: 139.127769,
-		tags: [ 'aliquip', 'consectetur', 'elit', 'eu', 'exercitation', 'labore', 'reprehenderit' ],
+		tags: ['aliquip', 'consectetur', 'elit', 'eu', 'exercitation', 'labore', 'reprehenderit'],
 		friends: [
 			{
 				id: 0,
@@ -701,7 +701,7 @@ var datos = [
 		registered: '2014-12-08T11:00:38 +03:00',
 		latitude: -53.583588,
 		longitude: -66.588182,
-		tags: [ 'tempor', 'occaecat', 'ullamco', 'elit', 'anim', 'nulla', 'amet' ],
+		tags: ['tempor', 'occaecat', 'ullamco', 'elit', 'anim', 'nulla', 'amet'],
 		friends: [
 			{
 				id: 0,
@@ -737,7 +737,7 @@ var datos = [
 		registered: '2014-11-22T02:46:18 +03:00',
 		latitude: -51.207337,
 		longitude: 121.443745,
-		tags: [ 'magna', 'eu', 'velit', 'duis', 'elit', 'do', 'sint' ],
+		tags: ['magna', 'eu', 'velit', 'duis', 'elit', 'do', 'sint'],
 		friends: [
 			{
 				id: 0,
@@ -773,7 +773,7 @@ var datos = [
 		registered: '2015-11-01T12:54:59 +03:00',
 		latitude: 62.084289,
 		longitude: -23.303308,
-		tags: [ 'sunt', 'proident', 'enim', 'culpa', 'in', 'commodo', 'pariatur' ],
+		tags: ['sunt', 'proident', 'enim', 'culpa', 'in', 'commodo', 'pariatur'],
 		friends: [
 			{
 				id: 0,
@@ -809,7 +809,7 @@ var datos = [
 		registered: '2014-08-13T05:20:39 +03:00',
 		latitude: 57.906841,
 		longitude: -21.85802,
-		tags: [ 'cupidatat', 'sunt', 'minim', 'fugiat', 'aliqua', 'fugiat', 'consequat' ],
+		tags: ['cupidatat', 'sunt', 'minim', 'fugiat', 'aliqua', 'fugiat', 'consequat'],
 		friends: [
 			{
 				id: 0,
@@ -849,7 +849,9 @@ lib.femaleUsers = function() {
 
 // Retornar una array de strings (el email de los usarios de sexo masculino)
 lib.maleUsersEmails = function() {
-	var arrayEmailHombres = datos.filter((persona) => persona.gender != 'female').map((persona) => ({ email: persona.email, edad: persona.age }));
+	var arrayEmailHombres = datos
+		.filter(persona => persona.gender != 'female')
+		.map(persona => ({ email: persona.email, edad: persona.age }));
 
 	console.log(arrayEmailHombres);
 };
@@ -858,8 +860,8 @@ lib.maleUsersEmails = function() {
 // de todos los usuarios mayores que '25'
 lib.userOlderThan = function() {
 	var arrayMayores25 = datos
-		.filter((persona) => persona.age > 0)
-		.map((persona) => ({ name: persona.name, email: persona.email, age: persona.age }));
+		.filter(persona => persona.age > 0)
+		.map(persona => ({ name: persona.name, email: persona.email, age: persona.age }));
 	console.log(arrayMayores25);
 };
 
@@ -867,7 +869,7 @@ lib.userOlderThan = function() {
 // mas grande.
 lib.olderUser = function() {
 	var mayorEdad = datos.reduce(
-		function(max, persona) {
+		(max, persona) => {
 			if (persona.age > max.age) {
 				max.age = persona.age;
 				max.name = persona.name;
@@ -879,8 +881,6 @@ lib.olderUser = function() {
 
 	console.log(mayorEdad);
 };
-
-
 
 // Retornar el promedio de edad de los usuarios (number)
 lib.userAgeAverage = function() {
@@ -898,11 +898,12 @@ lib.userAgeAverage = function() {
 
 // Retornar el promedio de edad de los usuarios hombres (number)
 lib.userMaleAgeAverage = function() {
-	let resultado = datos.filter((persona) => persona.gender === 'male').reduce(
+	let resultado = datos.filter(persona => persona.gender === 'male').reduce(
 		(promedio, persona) => {
 			promedio.contador++;
 			promedio.acumulador += persona.age;
-			if (promedio.contador == datos.filter((persona) => persona.gender === 'male').length) promedio.resultado = promedio.acumulador / promedio.contador;
+			if (promedio.contador == datos.filter(persona => persona.gender === 'male').length)
+				promedio.resultado = promedio.acumulador / promedio.contador;
 			return promedio;
 		},
 		{ contador: 0, acumulador: 0, resultado: 0 }
@@ -912,11 +913,12 @@ lib.userMaleAgeAverage = function() {
 
 // Retornar el promedio de edad de los usuarios mujeres (number)
 lib.userFemaleAgeAverage = function() {
-    let resultado = datos.filter((persona) => persona.gender === 'female').reduce(
+	let resultado = datos.filter(persona => persona.gender === 'female').reduce(
 		(promedio, persona) => {
 			promedio.contador++;
 			promedio.acumulador += persona.age;
-			if (promedio.contador == datos.filter((persona) => persona.gender === 'female').length) promedio.resultado = promedio.acumulador / promedio.contador;
+			if (promedio.contador == datos.filter(persona => persona.gender === 'female').length)
+				promedio.resultado = promedio.acumulador / promedio.contador;
 			return promedio;
 		},
 		{ contador: 0, acumulador: 0, resultado: 0 }
@@ -927,8 +929,6 @@ lib.userFemaleAgeAverage = function() {
 // Retornar un objeto  de etiquetas (tags)
 // cada s del objeto es el nombre de una etiqueta
 // y el value es la cantidad de usuarios que tienene esa etiqueta
-lib.tagCloud = function() {
-
-};
+lib.tagCloud = function() {};
 
 console.log(lib);

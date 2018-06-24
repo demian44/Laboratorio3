@@ -22,7 +22,7 @@ function activar_batiseñal(): string {
   return "activada";
 }
 
-let pedir_ayuda_2 = () => console.log("Auxilio!!!");
+let pedir_ayuda_2 = ():void => console.log("Auxilio!!!");
 
 function pedir_ayuda() {
   console.log("Auxilio!!!");
