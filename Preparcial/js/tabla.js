@@ -9,17 +9,17 @@ var Parcial;
         Table.HacerCabecera = function () {
             var head = '<tr>';
             if (Parcial.Visibilidad.colNombre)
-                head += "<th scope='col'>Nombre</th>";
+                head += "<th style='text-align:center'scope='col'>Nombre</th>";
             if (Parcial.Visibilidad.colLegajo)
-                head += "<th scope='col'>Legajo</th>";
+                head += "<th style='text-align:center'scope='col'>Legajo</th>";
             if (Parcial.Visibilidad.colMateria)
-                head += "<th scope='col'>Materia</th>";
+                head += "<th style='text-align:center'scope='col'>Materia</th>";
             if (Parcial.Visibilidad.colNota)
-                head += "<th scope='col'>Nota</th>";
+                head += "<th style='text-align:center'scope='col'>Nota</th>";
             if (Parcial.Visibilidad.colEditar)
-                head += "<th scope='col'>Editar</th>";
+                head += "<th style='text-align:center'scope='col'>Editar</th>";
             if (Parcial.Visibilidad.colEliminar)
-                head += "<th scope='col'>Eliminar</th>";
+                head += "<th style='text-align:center'scope='col'>Eliminar</th>";
             head += '</tr>';
             $('#headTable').html(head);
         };
@@ -32,17 +32,17 @@ var Parcial;
             arrayAlumnos.forEach(function (alumno) {
                 body += "<tr>";
                 if (Parcial.Visibilidad.colNombre)
-                    body += "<th scope=\"row\">" + alumno.GetNombre() + "</th>";
+                    body += "<td style=\"text-align:center\" scope=\"row\">" + alumno.GetNombre() + "</td>";
                 if (Parcial.Visibilidad.colLegajo)
-                    body += "<td>" + alumno.GetLegajo() + "</td>";
+                    body += "<td style=\"text-align:center\">" + alumno.GetLegajo() + "</td>";
                 if (Parcial.Visibilidad.colMateria)
-                    body += "<td>" + alumno.GetMateria() + "</td>";
+                    body += "<td style=\"text-align:center\">" + alumno.GetMateria() + "</td>";
                 if (Parcial.Visibilidad.colNota)
-                    body += "<td>" + alumno.GetNota() + "</td>";
+                    body += "<td style=\"text-align:center\">" + alumno.GetNota() + "</td>";
                 if (Parcial.Visibilidad.colEditar)
-                    body += "<td><button type=\"button\"  class=\"btn btn btn-link\">Edit</button></td>";
+                    body += "<td style=\"text-align:center\"><button type=\"button\"  class=\"btn btn btn-link\">Edit</button></td>";
                 if (Parcial.Visibilidad.colEliminar) {
-                    body += "<td><button  type=\"button\" onclick=\"Parcial.Eliminar(\n\t\t\t\t\t" + alumno.GetId() + "\n\t\t\t\t\t)\" class=\"btn btn btn-link\" style=\"color:red\">Delete</button></td>";
+                    body += "<td style=\"text-align:center\"><button  type=\"button\" onclick=\"Parcial.Eliminar(\n\t\t\t\t\t" + alumno.GetId() + "\n\t\t\t\t\t)\" class=\"btn btn btn-link\" style=\"color:red\">Delete</button></td>";
                 }
             });
             if (arrayAlumnos.length > 0) {
@@ -59,11 +59,11 @@ var Parcial;
                 body +=
                     "<tr>" +
                         ("<th scope=\"row\">" + alumno.GetNombre() + "</th>") +
-                        ("<td>" + alumno.GetLegajo() + "</td>") +
-                        ("<td>" + alumno.GetMateria() + "</td>") +
-                        ("<td>" + alumno.GetNota() + "</td>") +
-                        "<td><button type=\"button\"  class=\"btn btn-outline-default\">Editar</button></td>" +
-                        ("<td><button type=\"button\" onclick=\"Parcial.Eliminar(\n\t\t\t\t\t" + alumno.GetId() + "\n\t\t\t\t\t)\" class=\"btn btn-outline-danger\">Eliminar</button></td>");
+                        ("<td >" + alumno.GetLegajo() + "</td>") +
+                        ("<td style=\"text-align:center\">" + alumno.GetMateria() + "</td>") +
+                        ("<td style=\"text-align:center\">" + alumno.GetNota() + "</td>") +
+                        "<td style=\"text-align:center\"><button type=\"button\"  class=\"btn btn-outline-default\">Editar</button></td>" +
+                        ("<td style=\"text-align:center\"><button type=\"button\" onclick=\"Parcial.Eliminar(\n\t\t\t\t\t" + alumno.GetId() + "\n\t\t\t\t\t)\" class=\"btn btn-outline-danger\">Eliminar</button></td>");
             });
             if (arrayAlumnos.length > 0) {
                 body += '</tr>';
