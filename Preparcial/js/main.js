@@ -1,10 +1,8 @@
 var Parcial;
 (function (Parcial) {
     var maxId = 0;
-    var cabeceras = ['Nombre', 'Legajo', 'Materia', 'Nota', 'Editar', 'Eliminar'];
     var auxAlumno;
     var arrayAlumnos;
-    var cabecerasFiltradas = ['5', '12', '8', '130', '44'];
     var Validar = function () {
         var response = true;
         auxAlumno = new Parcial.Alumno();
@@ -67,29 +65,28 @@ var Parcial;
         }
     };
     Parcial.VerOcultarColumna = function (columna) {
-        var columnaVisible = false;
-        cabecerasFiltradas.forEach(function (element) {
-            if (element == columna) {
-                columnaVisible = true;
-            }
-        });
-        if (columnaVisible)
-            console.log('Existe cabecera');
-        else
-            console.log('No existe.');
-        // 	cabecerasFiltradas = cabeceras.filter(cabecera => {
-        // 		cabecera != columna;
-        // 	});
-        // Parcial.Table.HacerCabecera(cabecerasFiltradas);
-        // Parcial.Table.HacerBody(arrayAlumnos,cabecerasFiltradas);
-        //asdñaodjasdojasd
+        var columnaVisible = Parcial.Visibilidad.CambiarCol(columna);
+        if (!columnaVisible) {
+            $('#btn' + columna).removeClass('btn-outline-primary');
+            $('#btn' + columna).addClass('btn-default');
+        }
+        else {
+            $('#btn' + columna).addClass('btn-outline-primary');
+            $('#btn' + columna).removeClass('btn-default');
+        }
+        Parcial.Table.HacerCabecera();
+        Parcial.Table.HacerBody(arrayAlumnos);
     };
     var hacerTabla = function () {
         arrayAlumnos = new Array();
-        cabecerasFiltradas = cabeceras;
         arrayAlumnos = Parcial.Alumno.CargarAlumnos(JSON.parse(localStorage.getItem('arrayAlumnos')));
         Parcial.SetMaxId();
-        Parcial.Table.HacerCabecera(cabeceras);
+        Parcial.Table.HacerCabecera();
+        Parcial.Table.HacerBody(arrayAlumnos);
+    };
+    Parcial.VerTodo = function () {
+        Parcial.Visibilidad.VerTodas();
+        Parcial.Table.HacerCabecera();
         Parcial.Table.HacerBody(arrayAlumnos);
     };
     $(document).ready(function () {

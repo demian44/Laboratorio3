@@ -1,9 +1,7 @@
 namespace Parcial {
 	let maxId: number = 0;
-	let cabeceras: string[] = ['Nombre', 'Legajo', 'Materia', 'Nota', 'Editar', 'Eliminar'];
 	let auxAlumno: Parcial.Alumno;
 	let arrayAlumnos: Array<Parcial.Alumno>;
-	var cabecerasFiltradas = ['5', '12', '8', '130', '44'];
 
 	let Validar = (): boolean => {
 		let response: boolean = true;
@@ -74,30 +72,30 @@ namespace Parcial {
 	};
 
 	export let VerOcultarColumna = (columna: string): void => {
-		let columnaVisible: boolean = false;
-		cabecerasFiltradas.forEach(element => {
-			if (element == columna) {
-				columnaVisible = true;				
-			}
-		});
+		let columnaVisible: boolean = Parcial.Visibilidad.CambiarCol(columna);
 
-		if (columnaVisible) console.log('Existe cabecera');
-		else console.log('No existe.');
+		if (!columnaVisible) {
+			$('#btn' + columna).removeClass('btn-outline-primary');
+			$('#btn' + columna).addClass('btn-default');
+		} else {
+			$('#btn' + columna).addClass('btn-outline-primary');
+			$('#btn' + columna).removeClass('btn-default');
+		}
 
-		// 	cabecerasFiltradas = cabeceras.filter(cabecera => {
-		// 		cabecera != columna;
-		// 	});
-
-		// Parcial.Table.HacerCabecera(cabecerasFiltradas);
-		// Parcial.Table.HacerBody(arrayAlumnos,cabecerasFiltradas);
-		//asdñaodjasdojasd
+		Parcial.Table.HacerCabecera();
+		Parcial.Table.HacerBody(arrayAlumnos);
 	};
 	let hacerTabla = (): void => {
 		arrayAlumnos = new Array<Parcial.Alumno>();
-		cabecerasFiltradas = cabeceras;
 		arrayAlumnos = Parcial.Alumno.CargarAlumnos(JSON.parse(localStorage.getItem('arrayAlumnos')));
 		SetMaxId();
-		Parcial.Table.HacerCabecera(cabeceras);
+		Parcial.Table.HacerCabecera();
+		Parcial.Table.HacerBody(arrayAlumnos);
+	};
+
+	export let VerTodo = (): void => {
+		Parcial.Visibilidad.VerTodas();
+		Parcial.Table.HacerCabecera();
 		Parcial.Table.HacerBody(arrayAlumnos);
 	};
 
