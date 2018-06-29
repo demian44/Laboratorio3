@@ -15,9 +15,8 @@ namespace Parcial {
 			if (Parcial.Visibilidad.colLegajo) head += "<th scope='col'>Legajo</th>";
 			if (Parcial.Visibilidad.colMateria) head += "<th scope='col'>Materia</th>";
 			if (Parcial.Visibilidad.colNota) head += "<th scope='col'>Nota</th>";
-			if (Parcial.Visibilidad.colEditar) head += "<th scope='col'>Edit</th>";
-			if (Parcial.Visibilidad.colEliminar) head += "<th scope='col'>Delete</th>";
-
+			if (Parcial.Visibilidad.colEditar) head += "<th scope='col'>Editar</th>";
+			if (Parcial.Visibilidad.colEliminar) head += "<th scope='col'>Eliminar</th>";
 			head += '</tr>';
 			$('#headTable').html(head);
 		}

@@ -17,6 +17,8 @@
     <script src="./js/manejadorEstilos.js"></script>
     <script src="./js/main.js"></script>
     <title>Pre Parcial</title>
+   <style>
+   </style>
 </head>
 
 <body>
@@ -39,12 +41,12 @@
                 </div>
                 <div class="form-group has-error" style="height:76px;" id="form">
                     <label for="nombre" id="nombreLabel">Nombre</label>
-                    <input type="text" class="form-control" maxlength="40" id="nombreInput" placeholder="Ingresar nombre" onclick="Parcial.ManejadorEstilos.ResetClass('nombre')">
+                    <input type="text" class="form-control" maxlength="15" id="nombreInput" placeholder="Ingresar nombre" onclick="Parcial.ManejadorEstilos.ResetClass('nombre')">
                     <small id="nombreHelp" class="form-text text-danger fixed collapse" style="margin: 1% 0 -3% 0">Debe ingresar un nombre válido</small>
                 </div>
                 <div class="form-group has-error" style="height:76px;" id="form">
                     <label for="materiaInput" id="materiaLabel">Materia</label>
-                    <input type="text" class="form-control" maxlength="40" id="materiaInput" placeholder="Ingresar Materia" onclick="Parcial.ManejadorEstilos.ResetClass('materia')">
+                    <input type="text" class="form-control" maxlength="15" id="materiaInput" placeholder="Ingresar Materia" onclick="Parcial.ManejadorEstilos.ResetClass('materia')">
                     <small id="materiaHelp" class="form-text text-danger collapse" style="margin: 1% 0 -3% 0">Debe ingresar una materia válida</small>
                 </div>
                 <div class="form-group has-error" style="height:76px;" id="form">
@@ -64,7 +66,7 @@
             <div class="col-xm-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
 
                 <div class="row" style="margin-bottom: 1%;margin-top:-3%">
-                    <div class="col-xm-6 col-sm-6 col-md-6 col-lgk-6 col-xl-6 text-left ">
+                    <div class="col-xm-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 text-left ">
                         <div class="btn-group" role="group" style="margin-top:3%">
                             <button id="btnNombre" type="button" class="btn btn-outline-primary" onclick="Parcial.VerOcultarColumna('Nombre')">Nombre</button>
                             <button id="btnLegajo" type="button" class="btn btn-outline-primary" onclick="Parcial.VerOcultarColumna('Legajo')">Legajo</button>
@@ -76,15 +78,15 @@
                     </div>
                     <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                     </div>
-                    <div class="col-xm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-right">
-                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar" title="Type in a name">
+                    <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-right" style="margin:0 0 0 0">
+                        <input type="text" id="filtro" onkeyup="Parcial.FiltrarPorNota()" placeholder="Filtrar por nota" title="Type in a name">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xm-11 col-sm-11 col-md-11 col-lg-12 col-xl-12">
-                        <table class="table ">
-                            <thead class="thead-dark" id="headTable"></thead>
+                    <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <table id="myTable" class=" table-responsive table table-scroll table-striped">
+                            <thead class="thead thead-dark" id="headTable"></thead>
                             <tbody class="border" id="bodyTable"></tbody>
                         </table>
                     </div>
@@ -114,3 +116,7 @@
 </body>
 
 </html>
+
+
+
+

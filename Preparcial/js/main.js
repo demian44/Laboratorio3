@@ -25,14 +25,28 @@ var Parcial;
         else
             auxAlumno.SetMateria(String($('#materiaInput').val()));
         if ($('#notaInput').val() == undefined || $('#notaInput').val() == '') {
+            console.log($('#notaInput').val());
             response = false;
             Parcial.ManejadorEstilos.SetErrorClass('nota');
         }
-        else
-            auxAlumno.SetNota(Number($('#nota').val()));
+        else {
+            if (!auxAlumno.SetNota(Number($('#notaInput').val()))) {
+                response = false;
+                Parcial.ManejadorEstilos.SetErrorClass('nota');
+            }
+        }
         return response;
     };
     Parcial.Agregar = function () {
+        if (Validar()) {
+            maxId++;
+            auxAlumno.SetId(maxId);
+            arrayAlumnos.push(auxAlumno);
+            localStorage.setItem('arrayAlumnos', JSON.stringify(arrayAlumnos));
+            Parcial.Table.HacerBody(arrayAlumnos);
+        }
+    };
+    Parcial.FiltrarNota = function (nota) {
         if (Validar()) {
             maxId++;
             auxAlumno.SetId(maxId);
@@ -49,10 +63,10 @@ var Parcial;
             var arrayAlumnos_1 = alumnos == null ? Array : JSON.parse(alumnos);
             console.log('alumnos json: \n');
             console.log('ID: ', id, '\n');
-            var miAlumno = new Parcial.Alumno('Pepe', 12, 'Mate', 8, 23);
             arrayAlumnos_1 = arrayAlumnos_1.filter(function (alumno) {
                 return alumno['id'] != id;
             });
+            console.log(arrayAlumnos_1);
             localStorage.setItem('arrayAlumnos', JSON.stringify(arrayAlumnos_1));
             hacerTabla();
         }
@@ -80,14 +94,53 @@ var Parcial;
     var hacerTabla = function () {
         arrayAlumnos = new Array();
         arrayAlumnos = Parcial.Alumno.CargarAlumnos(JSON.parse(localStorage.getItem('arrayAlumnos')));
+        console.log(JSON.parse(localStorage.getItem('arrayAlumnos')));
         Parcial.SetMaxId();
         Parcial.Table.HacerCabecera();
         Parcial.Table.HacerBody(arrayAlumnos);
     };
-    Parcial.VerTodo = function () {
-        Parcial.Visibilidad.VerTodas();
+    Parcial.FiltrarPorNota = function () {
+        var nota = $('#filtro').val();
         Parcial.Table.HacerCabecera();
-        Parcial.Table.HacerBody(arrayAlumnos);
+        var coso = '';
+        if (nota === undefined || isNaN(nota) || nota == '' || nota[0] == ' ')
+            Parcial.Table.HacerBody(arrayAlumnos);
+        else {
+            var fileredArray = arrayAlumnos.filter(function (alumno) {
+                return alumno['nota'] == nota;
+            });
+            Parcial.Table.HacerBody(fileredArray);
+        }
+    };
+    Parcial.Limpiar = function () {
+        $('#legajoInput').val('');
+        $('#nombreInput').val('');
+        $('#materiaInput').val('');
+        $('#notaInput').val('');
+    };
+    Parcial.MapearPromedios = function () {
+        var arryaEstado = arrayAlumnos.map(function (alumno) {
+            if (alumno.GetNota() > 6)
+                return { id: alumno.GetId(), estado: 'Aprobado' };
+            else
+                return { id: alumno.GetId(), estado: 'Desaprobado' };
+        });
+        console.log(arryaEstado);
+    };
+    Parcial.ReduceAprobados = function () {
+        var arryaAprobado = arrayAlumnos.reduce(function (alumno, alumno2) {
+            if (alumno.GetNota() > alumno2.GetNota())
+                return alumno;
+            else
+                return alumno2;
+        });
+        console.log(arryaAprobado);
+    };
+    Parcial.FilterAprobados = function () {
+        var arryaAprobado = arrayAlumnos.filter(function (alumno) {
+            return alumno.GetNota() > 6;
+        });
+        console.log(arryaAprobado);
     };
     $(document).ready(function () {
         hacerTabla();

@@ -35,7 +35,14 @@ var Parcial;
             return _super.prototype.SetId.call(this, id);
         };
         Alumno.prototype.SetNota = function (nota) {
-            this.nota = nota < -1 && nota > 10 ? 0 : nota;
+            var retorno = false;
+            if (nota < -1 || nota > 10)
+                this.nota = 0;
+            else {
+                retorno = true;
+                this.nota = nota;
+            }
+            return retorno;
         };
         Alumno.prototype.GetLegajo = function () {
             return this.legajo;

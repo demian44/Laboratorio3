@@ -19,8 +19,14 @@ namespace Parcial {
 		public SetId(id: number) {
 			return super.SetId(id);
 		}
-		public SetNota(nota: number) {
-			this.nota = nota < -1 && nota > 10 ? 0 : nota;
+		public SetNota(nota: number): boolean {
+			let retorno: boolean = false;
+			if (nota < -1 || nota > 10) this.nota = 0;
+			else {
+				retorno = true;
+				this.nota = nota;
+			}
+			return retorno;
 		}
 		public GetLegajo() {
 			return this.legajo;

@@ -143,8 +143,8 @@ html {
 	box-sizing: border-box;
 }
 
-#myInput {
-	background-image: url("./dist/css/search_ch.png");
+#filtro {
+	background-image: url("./search_ch.png");
 	background-position: 4%;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -162,24 +162,23 @@ html {
 	margin-left: 0;
 } */
 
-#myTable {
-	border-collapse: collapse;
-	width: 100%;
-	border: 1px solid #ddd;
-	font-size: 18px;
+.well {
+    background: none;
+    height: 320px;
 }
 
-#myTable th,
-#myTable td {
-	text-align: left;
-	padding: 12px;
+.table-scroll tbody {
+    position: absolute;
+    overflow-y: scroll;
+    height: 400px;
 }
 
-#myTable tr {
-	border-bottom: 1px solid #ddd;
+.table-scroll tr {
+    width: 100%;
+    table-layout: fixed;
+    display: inline-table;
 }
 
-#myTable tr.header,
-#myTable tr:hover {
-	background-color: #f1f1f1;
+.table-scroll thead > tr > th {
+    border: none;
 }

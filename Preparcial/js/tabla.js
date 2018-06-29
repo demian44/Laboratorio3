@@ -17,9 +17,9 @@ var Parcial;
             if (Parcial.Visibilidad.colNota)
                 head += "<th scope='col'>Nota</th>";
             if (Parcial.Visibilidad.colEditar)
-                head += "<th scope='col'>Edit</th>";
+                head += "<th scope='col'>Editar</th>";
             if (Parcial.Visibilidad.colEliminar)
-                head += "<th scope='col'>Delete</th>";
+                head += "<th scope='col'>Eliminar</th>";
             head += '</tr>';
             $('#headTable').html(head);
         };
