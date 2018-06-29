@@ -3,27 +3,28 @@ namespace Parcial {
 	let cabeceras: string[] = ['Nombre', 'Legajo', 'Materia', 'Nota', 'Editar', 'Eliminar'];
 	let auxAlumno: Parcial.Alumno;
 	let arrayAlumnos: Array<Parcial.Alumno>;
+	var cabecerasFiltradas = ['5', '12', '8', '130', '44'];
+
 	let Validar = (): boolean => {
 		let response: boolean = true;
 		auxAlumno = new Alumno();
 
-		console.log($('#legajo').val());
-		if ($('#legajo').val() == undefined || $('#legajo').val() == '') {
+		if ($('#legajoInput').val() == undefined || $('#legajoInput').val() == '') {
 			response = false;
 			Parcial.ManejadorEstilos.SetErrorClass('legajo');
-		} else auxAlumno.SetLegajo(Number($('#legajo').val()));
+		} else auxAlumno.SetLegajo(Number($('#legajoInput').val()));
 
-		if ($('#nombre').val() == undefined || $('#nombre').val() == '') {
+		if ($('#nombreInput').val() == undefined || $('#nombreInput').val() == '') {
 			response = false;
 			Parcial.ManejadorEstilos.SetErrorClass('nombre');
-		} else auxAlumno.SetNombre(String($('#nombre').val()));
+		} else auxAlumno.SetNombre(String($('#nombreInput').val()));
 
-		if ($('#materia').val() == undefined || $('#materia').val() == '') {
+		if ($('#materiaInput').val() == undefined || $('#materiaInput').val() == '') {
 			response = false;
 			Parcial.ManejadorEstilos.SetErrorClass('materia');
-		} else auxAlumno.SetMateria(String($('#materia').val()));
+		} else auxAlumno.SetMateria(String($('#materiaInput').val()));
 
-		if ($('#nota').val() == undefined || $('#nota').val() == '') {
+		if ($('#notaInput').val() == undefined || $('#notaInput').val() == '') {
 			response = false;
 			Parcial.ManejadorEstilos.SetErrorClass('nota');
 		} else auxAlumno.SetNota(Number($('#nota').val()));
@@ -41,6 +42,29 @@ namespace Parcial {
 		}
 	};
 
+	export let Eliminar = (id: Number): void => {
+		if (1) {
+			let alumnos: string | null = localStorage.getItem('arrayAlumnos');
+
+			console.log('alumnos string: \n', alumnos[0]);
+
+			// let alumnosJson: JSON[] = alumnos == null ? Array : JSON.parse(alumnos);
+			let arrayAlumnos: JSON[] = alumnos == null ? Array : JSON.parse(alumnos);
+
+			console.log('alumnos json: \n');
+
+			console.log('ID: ', id, '\n');
+			let miAlumno: Parcial.Alumno = new Alumno('Pepe', 12, 'Mate', 8, 23);
+
+			arrayAlumnos = arrayAlumnos.filter(function(alumno: JSON) {
+				return alumno['id'] != id;
+			});
+
+			localStorage.setItem('arrayAlumnos', JSON.stringify(arrayAlumnos));
+			hacerTabla();
+		}
+	};
+
 	export let SetMaxId = (): void => {
 		if (arrayAlumnos != undefined && arrayAlumnos.length > 0) {
 			maxId = arrayAlumnos
@@ -49,15 +73,37 @@ namespace Parcial {
 		}
 	};
 
+	export let VerOcultarColumna = (columna: string): void => {
+		let columnaVisible: boolean = false;
+		cabecerasFiltradas.forEach(element => {
+			if (element == columna) {
+				columnaVisible = true;				
+			}
+		});
+
+		if (columnaVisible) console.log('Existe cabecera');
+		else console.log('No existe.');
+
+		// 	cabecerasFiltradas = cabeceras.filter(cabecera => {
+		// 		cabecera != columna;
+		// 	});
+
+		// Parcial.Table.HacerCabecera(cabecerasFiltradas);
+		// Parcial.Table.HacerBody(arrayAlumnos,cabecerasFiltradas);
+		//asdñaodjasdojasd
+	};
+	let hacerTabla = (): void => {
+		arrayAlumnos = new Array<Parcial.Alumno>();
+		cabecerasFiltradas = cabeceras;
+		arrayAlumnos = Parcial.Alumno.CargarAlumnos(JSON.parse(localStorage.getItem('arrayAlumnos')));
+		SetMaxId();
+		Parcial.Table.HacerCabecera(cabeceras);
+		Parcial.Table.HacerBody(arrayAlumnos);
+	};
+
 	$(document).ready(
 		(): void => {
-			arrayAlumnos = new Array<Parcial.Alumno>();
-
-			arrayAlumnos = Parcial.Alumno.CargarAlumnos(JSON.parse(localStorage.getItem('arrayAlumnos')));
-			SetMaxId();
-			Parcial.Table.HacerCabecera(cabeceras);
-			Parcial.Table.HacerBody(arrayAlumnos);
-			
+			hacerTabla();
 		}
 	);
 }

@@ -35,8 +35,10 @@ var Parcial;
                         '<td>' +
                         alumno.GetNota() +
                         '</td>' +
-                        '<td><button type="button" class="btn btn-outline-default">Editar</button></td>' +
-                        '<td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>';
+                        '<td><button type="button"  class="btn btn-outline-default">Editar</button></td>' +
+                        '<td><button type="button" onclick="Parcial.Eliminar(' +
+                        alumno.GetId() +
+                        ')" class="btn btn-outline-danger">Eliminar</button></td>';
             });
             if (arrayAlumnos.length > 0) {
                 body += '</tr>';

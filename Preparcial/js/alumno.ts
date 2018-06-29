@@ -13,6 +13,12 @@ namespace Parcial {
 		public GetNota() {
 			return this.nota;
 		}
+		public GetId() {
+			return super.GetId();
+		}
+		public SetId(id: number) {
+			return super.SetId(id);
+		}
 		public SetNota(nota: number) {
 			this.nota = nota < -1 && nota > 10 ? 0 : nota;
 		}

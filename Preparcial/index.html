@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/css/bootstrap.css">
     <script src="./dist/js/jquery-3.3.1.slim.min.js"></script>
     <script src="./dist/js/bootstrap.min.js"></script>
     <script src="./dist/js/bootstrap.bundle.min.js"></script>
@@ -15,49 +16,161 @@
     <script src="./js/manejadorEstilos.js"></script>
     <script src="./js/main.js"></script>
     <title>Pre Parcial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url("./dist/css/search_ch.png");
+            background-position: 4%;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 14;
+            margin-top: 5%;
+            padding: 1.5% 0 1.5% 14%;
+
+            border: 1px solid #ddd;
+
+        }
+
+        /* .searchLabel {
+            display: inline-block;
+            margin-bottom: .5rem;
+            margin-left: 0;
+        } */
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="navbar navbar-toggleable-md bd-navbar nav-dark">
-        <h1>Pre parcial</h1>
-        <p>Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción
-            Descripción Descripción Descripción Descripción
-        </p>
-    </div>
-    <div class="container-fluid" style="padding:0 3% 1% 3%;">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top ">
+        <div class="row" style="width: 100%;height: 80px;">
+            <div class="col-xm-12 col-sm-12 col-md-8 col-lgk-8 col-xl-8">
+                <label style="font-size: 50px;color: rgba(239, 244, 255, 0.925);margin-left: 1%">Laboratorio </label>
+                <label style="font-size: 20px;color: rgb(158, 158, 158);margin: 2% 0 0 1%">.SP - Boullon Demian </label>
+            </div>
+            <div class="col-xm-12 col-sm-12 col-md-4 col-lgk-4 col-xl-4 text-right ">
+                <!-- ///////////// BUTTON GROUP ///////////// -->
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="margin: 5.5% -5% 0 0">
+                    <button type="button" class="btn btn-primary">Ver todo</button>
+                    <button type="button" class="btn btn-primary">Ocultar todo</button>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Ocultar / Ver
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" onclick="Parcial.VerOcultarColumna('nombre')">Nombre</a>
+                            <a class="dropdown-item" onclick="Parcial.VerOcultarColumna('legajo')">Legajo</a>
+                            <a class="dropdown-item" onclick="Parcial.VerOcultarColumna('materia')">Materia</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ///////////// BUTTON GROUP ///////////// -->
+            </div>
+            <!-- <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2 col-xl-4">
+            </div> -->
+        </div>
+    </nav>
+    <div class="container-fluid" style="padding:0 3% 0% 3%;margin-top: 2%">
         <div class="row filas">
-            <div class="col-xm-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 border" style="padding: 1% 3% 1% 3%">
-                <div class="form-group has-error" id="form">
+            <div class="col-xm-12 col-sm-12 col-md-4 col-lg-4 col-xl-4  border" style="padding: 1% 3% 1% 3%">
+                <div class="form-group has-error" style="height:76px;" id="form">
                     <label for="legajo" id="legajoLabel">Legajo</label>
                     <input type="number" class="form-control" max="2000" min="0" id="legajoInput" placeholder="Ingresar legajo" onclick="Parcial.ManejadorEstilos.ResetClass('legajo')">
-                    <small id="legajoHelp" class="form-text text-danger" style="margin: 1% 0 -3% 0">Debe ingresar un legajo entre 0 y 2000</small>
+                    <small id="legajoHelp" class="form-text text-danger collapse" style="margin: 1% 0 -3% 0">Debe ingresar un legajo entre 0 y 2000</small>
                 </div>
-                <div class="form-group has-error" id="form">
+                <div class="form-group has-error" style="height:76px;" id="form">
                     <label for="nombre" id="nombreLabel">Nombre</label>
                     <input type="text" class="form-control" maxlength="40" id="nombreInput" placeholder="Ingresar nombre" onclick="Parcial.ManejadorEstilos.ResetClass('nombre')">
-                    <small id="nombreHelp" class="form-text text-danger" style="margin: 1% 0 -3% 0">Debe ingresar un nombre válido</small>
+                    <small id="nombreHelp" class="form-text text-danger fixed collapse" style="margin: 1% 0 -3% 0">Debe ingresar un nombre válido</small>
                 </div>
-                <div class="form-group has-error" id="form">
+                <div class="form-group has-error" style="height:76px;" id="form">
                     <label for="materiaInput" id="materiaLabel">Materia</label>
                     <input type="text" class="form-control" maxlength="40" id="materiaInput" placeholder="Ingresar Materia" onclick="Parcial.ManejadorEstilos.ResetClass('materia')">
-                    <small id="materiaHelp" class="form-text text-danger" style="margin: 1% 0 -3% 0">Debe ingresar una materia válida</small>
+                    <small id="materiaHelp" class="form-text text-danger collapse" style="margin: 1% 0 -3% 0">Debe ingresar una materia válida</small>
                 </div>
-                <div class="form-group has-error" id="form">
+                <div class="form-group has-error" style="height:76px;" id="form">
                     <label for="nota" id="notaLabel" class="">Nota</label>
                     <input type="number" id="notaInput" class="form-control" max="10" min="0" placeholder="Ingresar nota" onclick="Parcial.ManejadorEstilos.ResetClass('nota')">
-                    <small id="notaHelp" class="form-text text-danger" style="margin: 1% 0 -3% 0">Debe ingresar una nota entre 0 y 10</small>
+                    <small id="notaHelp" class="form-text text-danger collapse" style="margin: 1% 0 -3% 0">Debe ingresar una nota entre 0 y 10</small>
                 </div>
-                <button type="button" onclick="Parcial.Limpiar()" class="btn btn-outline-primary btn-md" style="width: 48.5%;"> Limpiar</button>
-                <button type="button" onclick="Parcial.Agregar()" class="btn btn-outline-success btn-md" style="width: 48.5%;margin-left: 1%;">
-                    Agregar </button>
+                <div class="row" style="margin-top:8%;padding:0 3% 1% 4%;">
+                    <button type="button" onclick="Parcial.Limpiar()" class="btn btn-outline-primary btn-md" style="width: 48.5%;"> Limpiar</button>
+                    <button type="button" onclick="Parcial.Agregar()" class="btn btn-outline-success btn-md" style="width: 48.5%;margin-left: 1%;">
+                        Agregar </button>
+                </div>
+
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">
+                    Open modal
+                </button>
+
+
             </div>
-            <div class="col-xm-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" style="padding: 0 1% 2% 1%">
-                <table class="table table-striped">
-                    <thead class="thead-dark" id="headTable"></thead>
-                    <tbody class="border" id="bodyTable"></tbody>
-                </table>
+            <div class="col-xm-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+                <div class="row" style="margin-bottom: 1%;margin-top:-3%">
+                    <div class="col-xm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+
+                    </div>
+                    <div class="col-xm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    </div>
+                    <div class="col-xm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-right">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar" title="Type in a name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <table class="table table-striped">
+                            <thead class="thead-dark" id="headTable"></thead>
+                            <tbody class="border" id="bodyTable"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <br>
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            Modal body..
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>

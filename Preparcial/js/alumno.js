@@ -28,6 +28,12 @@ var Parcial;
         Alumno.prototype.GetNota = function () {
             return this.nota;
         };
+        Alumno.prototype.GetId = function () {
+            return _super.prototype.GetId.call(this);
+        };
+        Alumno.prototype.SetId = function (id) {
+            return _super.prototype.SetId.call(this, id);
+        };
         Alumno.prototype.SetNota = function (nota) {
             this.nota = nota < -1 && nota > 10 ? 0 : nota;
         };

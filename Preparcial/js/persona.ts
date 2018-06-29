@@ -1,9 +1,9 @@
 namespace Parcial {
 	export class Persona {
-		private nombre: string;
+		private nombre: String;
 		private id: number;
 
-		constructor(nombre?: string, id?: number) {
+		constructor(nombre?: String, id?: number) {
 			this.nombre = nombre;
 			this.id = id;
 		}
@@ -11,7 +11,7 @@ namespace Parcial {
 		public GetNombre() {
 			return this.nombre;
 		}
-		public SetNombre(nombre: string) {
+		public SetNombre(nombre: String) {
 			this.nombre = nombre == '' ? 'No asignado' : nombre;
 		}
 
